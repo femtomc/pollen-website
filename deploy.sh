@@ -2,6 +2,7 @@ cd pollen
 raco pollen reset
 raco pollen render -r .
 raco pollen publish . $(pwd)/../site
+raco pollen reset
 cd ..
 msg="Rebuilding site - $(date)"
 if [ -n "$*" ]; then
