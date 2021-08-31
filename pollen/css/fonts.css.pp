@@ -1,3 +1,5 @@
+#lang pollen
+
 @font-face {
     font-family: concourse_index;
     font-style: normal;

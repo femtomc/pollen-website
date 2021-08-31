@@ -1,3 +1,5 @@
+#lang pollen
+
 body {
     font-size: 1.0em;
     font-family: concourse_3;

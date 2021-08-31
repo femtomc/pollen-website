@@ -1,3 +1,5 @@
 femtomc.github.io
 site
 .DS_Store
+*.html
+*.css
