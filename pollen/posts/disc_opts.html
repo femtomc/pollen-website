@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>A small guide to SSA-based compiler optimizations</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.1/es5/tex-mml-chtml.js">
+    </script>
+    <script type="text/javascript">
+    function toggle_div(id) {
+        e = document.getElementById(id);
+        if (e.style.display == 'block') {
+            e.style.display = 'none';
+        }
+        else if (e.style.display == 'none') {
+            e.style.display = 'block';
+        }
+    }
+    </script>
+    <link rel="stylesheet" type="text/css"
+          media="all" href="../css/posts.css"/>
+    <link rel="stylesheet" type="text/css"
+          media="all" href="../css/fonts.css"/>
+</head>
+    <body>
+    <div id="doc"><h1>A small guide to SSA-based compiler optimizations</h1><p>The middle phases of the compiler are where a lot of magic happens. For imperative languages, the representation<br/>of source code at this stage is usually in static single assignment form - a beneficial representation which allows computation of useful topological properties of the source program’s call and control flow graphs.</p><h3 class="subhead foldable"><a href="javascript:toggle_div('g23386')">Static single assignment form</a></h3><div style="display:none;" id="g23386" class="payload"></div><p>Information like dominators and the dominator tree facilitate transformations which reduce code size, eliminate unnecessary runtime execution, reduce pressure on runtime elements (like a garbage collector) before the code is further lowered and linked towards a piece of target hardware.</p><p>Below, I’ll cover a relatively standard set of optimizations.</p><h2 class="head">Inlining</h2><p>Call site (or block) inlining is a transformation which reduces the size of the program’s call graph by merging nodes together. Consider the following pseudo IR:</p><div class="highlight"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="source"><pre><span></span><span class="nf">foo</span><span class="kt">:</span> <span class="p">(</span><span class="o">%</span><span class="mi">1</span><span class="p">,</span> <span class="o">%</span><span class="mi">2</span><span class="p">,</span> <span class="o">%</span><span class="mi">3</span><span class="p">)</span>
+    <span class="o">%</span><span class="mi">4</span> <span class="ow">=</span> <span class="n">some_call</span><span class="p">(</span><span class="o">%</span><span class="mi">2</span><span class="p">,</span> <span class="o">%</span><span class="mi">3</span><span class="p">)</span>
+    <span class="o">%</span><span class="mi">5</span> <span class="ow">=</span> <span class="n">some_other_call</span><span class="p">(</span><span class="o">%</span><span class="mi">4</span><span class="p">,</span> <span class="o">%</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">return</span> <span class="o">%</span><span class="mi">5</span>
+</pre></div></td></tr></tbody></table></div><h2 class="head">Scalar replacement of aggregates</h2><h2 class="head">Loop-invariant code motion</h2><p>Loop-invariant code motion is mostly what it sounds like: moving statements outside of control flow when they do not affect the runtime semantics of the program.</p><p>This is very generic - but considering this example:</p><div class="highlight"><table class="sourcetable"><tbody><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div class="source"><pre><span></span><span class="kt">void</span> <span class="nf">f</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">){</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">n</span><span class="p">;</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div></td></tr></tbody></table></div><h2 class="head">Dead code elimination</h2><h2 class="head">Common subexpression elimination</h2><h2 class="head">Instruction combining</h2><h2 class="head">Loop unrolling</h2></div>
+</body>
