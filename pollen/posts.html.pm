@@ -6,12 +6,10 @@
     ◊section[#:id "chunk"]{
         ◊h2{Posts}
     }
-}
-
-◊section[#:id "posts-content"]{
-    ◊section[#:id "block"]{
+    ◊section[#:id "posts-content"]{
         ◊ol{
             ◊li{◊link["/posts/disc_compilers_pt1.html"]{Thoughts on compilers, the first part}}
         }
     }
 }
+

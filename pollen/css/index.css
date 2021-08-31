@@ -38,7 +38,7 @@ body {
 
 #posts-content {
     padding: 0.5em 1.2em 0.5em 1.2em;
-    font-size: 1.2em;
+    font-size: 1.3em;
 }
 
 #intro img.headshot {
@@ -68,7 +68,7 @@ h2 {
     color: #f5f5f5;
 }
 
-#block ol {
+#block ol, #posts-content ol {
     font-family: concourse_index;
     word-spacing: 2px;
     color: black;
