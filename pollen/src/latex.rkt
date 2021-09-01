@@ -25,7 +25,7 @@ LaTeX
                  (apply string-append code)
                  "\\end{" x "}"))
 
-(define (latex #:dir [dir "compiled/images"]
+(define (latex #:dir [dir "latex"]
                #:document [document "tikz"]
                #:ext [ext "png"]
                #:convert [convert "-quality 90"]

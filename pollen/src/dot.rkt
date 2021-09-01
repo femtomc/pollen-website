@@ -13,7 +13,7 @@ GraphViz
 ;; Requires `dot` available on $PATH.
 ;;
 
-(define (dot #:dir [dir "compiled/images"] 
+(define (dot #:dir [dir "images"] 
              #:css-class [css-class "dot"]
              . digraph)
   (make-directory* dir)
