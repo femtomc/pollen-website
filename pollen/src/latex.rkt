@@ -32,11 +32,12 @@ LaTeX
                     #:convert [convert "-quality 90"]
                     #:css-class [css-class "latex"]
                     . code)
+  (define unique-name (gensym))
   (make-directory* dir)
   (define latex (apply string-append code))
-  (define path (build-path dir (~a "latex_" (equal-hash-code latex) ".tex")))
-  (define pdf-path (build-path dir (~a "latex_" (equal-hash-code latex) ".pdf")))
-  (define img-path (build-path dir (~a "latex_" (equal-hash-code latex) "." ext)))
+  (define path (build-path dir (~a "latex_" unique-name ".tex")))
+  (define pdf-path (build-path dir (~a "latex_" unique-name ".pdf")))
+  (define img-path (build-path dir (~a "latex_" unique-name "." ext)))
   (with-output-to-file path (lambda () (printf latex))
                        #:exists 'replace)
   (define latex-cmd (string-append 

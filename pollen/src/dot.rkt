@@ -19,12 +19,13 @@ GraphViz
                   #:css-class [css-class "dot"]
                   . digraph)
   (make-directory* dir)
+  (define unique-name (gensym))
   (define g (string-append "digraph G {\n"
                            "rankdir=LR;\n"
                            (apply string-append digraph)
                            "\n}"))
-  (define path (build-path dir (~a "dot_" (equal-hash-code g) ".dot")))
-  (define img-path (build-path dir (~a "dot_" (equal-hash-code g) ".png")))
+  (define path (build-path dir (~a "dot_" unique-name ".dot")))
+  (define img-path (build-path dir (~a "dot_" unique-name ".png")))
   (with-output-to-file path (lambda() (printf g))
                        #:exists 'replace)
   (define dot-cmd (string-append "dot -Tpng -Gdpi=300 "
