@@ -37,6 +37,7 @@ The pollen/pygments module provides a `highlight` tag function that performs syn
          document-class
          use-package
          env
+         latex->ref
          latex)
 
 #|

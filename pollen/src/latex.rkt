@@ -3,6 +3,7 @@
 (provide document-class
          use-package
          env
+         latex->ref
          latex)
 
 #|
@@ -25,12 +26,12 @@ LaTeX
                  (apply string-append code)
                  "\\end{" x "}"))
 
-(define (latex #:dir [dir "latex"]
-               #:document [document "tikz"]
-               #:ext [ext "png"]
-               #:convert [convert "-quality 90"]
-               #:css-class [css-class "latex"]
-               . code)
+(define (latex->ref #:dir [dir "latex"]
+                    #:document [document "tikz"]
+                    #:ext [ext "png"]
+                    #:convert [convert "-quality 90"]
+                    #:css-class [css-class "latex"]
+                    . code)
   (make-directory* dir)
   (define latex (apply string-append code))
   (define path (build-path dir (~a "latex_" (equal-hash-code latex) ".tex")))
@@ -53,4 +54,19 @@ LaTeX
                     (path->string img-path)))
   (system latex-cmd)
   (system img-cmd)
-  `(img ((class ,css-class) (src ,(path->string img-path)))))
+  (path->string img-path))
+
+(define (latex #:dir [dir "latex"]
+               #:document [document "tikz"]
+               #:ext [ext "png"]
+               #:convert [convert "-quality 90"]
+               #:css-class [css-class "latex"]
+               . code)
+  (define img-path 
+    (apply latex->ref #:dir dir
+           #:document document
+           #:ext ext
+           #:convert convert
+           #:css-class css-class
+           code))
+  `(img ((class ,css-class) (src ,img-path))))
