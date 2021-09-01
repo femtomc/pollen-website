@@ -103,8 +103,8 @@ img.dot, img.latex {
 p {
   ◊|default-horiz-block-metrics|
   font-size: 1rem;
-  margin-top: 0.4rem;
-  margin-bottom: 0.4rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 
 a.◊|extlink-class|:after {
