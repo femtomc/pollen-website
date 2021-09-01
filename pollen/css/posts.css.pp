@@ -27,13 +27,15 @@
 ◊(define link-hover-transition ◊make-css-transition["background" "0.2s"])
 
 a:hover {
-background: ◊|hover-color|;
-◊|link-hover-transition|
-border-radius: 8px;
+    background: ◊|hover-color|;
+    ◊|link-hover-transition|
+    border-radius: 8px;
 }
 
 a {
-◊|link-hover-transition|
+    ◊|link-hover-transition|
+    text-decoration: none;
+    color: #96A;
 }
 
 body {
@@ -57,12 +59,20 @@ body {
     line-height: 1.4;
 }
 
-◊; This is for GraphViz-generated graphs.
-img.dot, img.latex {
+◊; This is for LaTeX-generated images.
+img.latex {
     margin-top:1rem;
     margin-left:4rem;
     margin-bottom:1rem;
     max-width: 70%;
+}
+
+◊; This is for GraphViz-generated graphs.
+img.dot {
+    margin-top:1rem;
+    margin-left:6rem;
+    margin-bottom:1rem;
+    max-width:50%;
 }
 
 ◊; don't want to use a #doc > * selector to apply default block metrics, because it will override block-level settings (because it is more “specific” in the CSS sense)
@@ -113,6 +123,28 @@ a.◊|extlink-class|:after {
     font-size: 90%;
     top: -0.10em;
     color: #933;
+}
+
+a.footnote {
+   text-decoration:none;
+   padding-left: 2px;
+   padding-right: 2px;
+   margin-right: 2px;
+} 
+
+a.footnote span {
+   left: 15px; 
+   bottom: 20px;
+   margin-left: 0px;
+   margin-right: 18px;
+   padding:14px 20px;
+   border-radius:4px; box-shadow: 5px 5px 8px #CCC;
+   border:1px solid #DCA;
+}
+
+a.footnote:hover span {
+   z-index: 9;
+   opacity: 1;
 }
 
 ◊|code-tag|.◊|code-class|, .◊|docs-class| {

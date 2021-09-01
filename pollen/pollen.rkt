@@ -19,6 +19,7 @@
   hyphenate)
 
 (require "src/mathjax.rkt")
+(require "src/popnote.rkt")
 (require "src/dot.rkt")
 (require "src/latex.rkt")
 
@@ -27,6 +28,7 @@ The pollen/pygments module provides a `highlight` tag function that performs syn
 |#
 
 (provide (all-defined-out) 
+         popup
          highlight
          dot
          $
