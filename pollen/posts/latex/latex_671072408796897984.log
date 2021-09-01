@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.11)  1 SEP 2021 11:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.4.11)  1 SEP 2021 11:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -390,7 +390,7 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count278
 \l__pdf_internal_box=\box59
 )
-No file latex_671072408796897984.aux.
+(latex/latex_671072408796897984.aux)
 \openout1 = `latex_671072408796897984.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
@@ -407,6 +407,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
+
 Preview: Fontsize 10pt
 Preview: PDFoutput 1
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -441,9 +442,9 @@ Preview: Tightpage 0 0 0 0
 [1{/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 (latex/latex_671072408796897984.aux) ) 
 Here is how much of TeX's memory you used:
- 12261 strings out of 478994
- 253826 string characters out of 5858184
- 525511 words of memory out of 5000000
+ 12263 strings out of 478994
+ 253894 string characters out of 5858184
+ 525502 words of memory out of 5000000
  29543 multiletter control sequences out of 15000+600000
  403430 words of font info for 27 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
