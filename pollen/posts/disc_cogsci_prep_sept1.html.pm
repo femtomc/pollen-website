@@ -8,7 +8,7 @@ I'm hoping to attend a course on development psychology this term - and for the 
 
 ◊head{Inspiration from physics}
 
-I have a partial viewpoint that cognitive science has borrowed much inspiration from physics which I wanted to explore. In the context of physics, representation and dynamics is mostly everything (seriously). Because physics has so successfully described the natural phenomenon that we experience, it seems plausible that applying the same techniques to the study of cognition might lead to similar success.
+I have an opinion that cognitive science has borrowed much inspiration from physics which I wanted to explore. In the context of physics, representation and dynamics is mostly everything (seriously). Because physics has so successfully described the natural phenomenon that we experience, it seems plausible that applying the same techniques to the study of cognition might lead to similar success.
 
 I will not argue about the content of representations in physics, suffice it to say that different base representations can lead to drastically different theories (think: N-dimensional Euclidean space, Hilbert space, even differentiable manifolds which are locally Minkowski).
 
