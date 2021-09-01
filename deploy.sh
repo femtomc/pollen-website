@@ -1,5 +1,7 @@
 cd pollen
 raco pollen reset
+rm -rf posts/images
+rm -rf posts/latex
 raco pollen render -r .
 raco pollen publish . $(pwd)/../site
 raco pollen reset
