@@ -1,7 +1,0 @@
-digraph G {
-E_prev->E_next;
-E_prev->O
-O->S
-S->S
-S->E_next;
-}

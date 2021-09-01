@@ -7,4 +7,5 @@ site
 *.aux
 *.pdf
 *.log
+*.tex
 compiled
