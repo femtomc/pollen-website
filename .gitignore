@@ -3,4 +3,8 @@ site
 .DS_Store
 *.html
 *.css
+*.dot
+*.aux
+*.pdf
+*.log
 compiled
