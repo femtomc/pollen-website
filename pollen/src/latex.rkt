@@ -4,7 +4,8 @@
          use-package
          env
          latex->ref
-         latex)
+         latex
+         inline-math->ref)
 
 #|
 LaTeX
@@ -27,7 +28,6 @@ LaTeX
                  "\\end{" x "}"))
 
 (define (latex->ref #:dir [dir "latex"]
-                    #:document [document "tikz"]
                     #:ext [ext "png"]
                     #:convert [convert "-quality 90"]
                     #:css-class [css-class "latex"]
@@ -57,16 +57,23 @@ LaTeX
   (path->string img-path))
 
 (define (latex #:dir [dir "latex"]
-               #:document [document "tikz"]
                #:ext [ext "png"]
                #:convert [convert "-quality 90"]
                #:css-class [css-class "latex"]
                . code)
   (define img-path 
     (apply latex->ref #:dir dir
-           #:document document
            #:ext ext
            #:convert convert
            #:css-class css-class
            code))
   `(img ((class ,css-class) (src ,img-path))))
+
+(define (inline-math->ref code) 
+  (latex->ref 
+    (string-append
+      "\\documentclass[preview]{standalone}\n"
+      "\\usepackage{amsmath}\n"
+      "\\begin{document}\n$"
+      code
+      "$\\end{document}")))

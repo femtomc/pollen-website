@@ -25,8 +25,11 @@ Now, what is mental about the above representation? I think this question motiva
 Subsystems which operate within ◊${(S, E)} can interact with ◊${E} through some set of parameters ◊${\theta}. This gives rise to a partial DAG model of interaction
 
 ◊dot{
-E_prev->E_next;
-S->E_next;
+ep[image="◊inline-math->ref{E_{prev}}", label=""]
+en[image="◊inline-math->ref{E_{next}}", label=""]
+S;
+ep->en;
+S->en;
 }
 
 where ◊${E_{next} \sim P(E_{next} | E_{prev}, \theta_{prev})}.
@@ -36,11 +39,13 @@ This encapsulates the discussion above - the environment has some transition fun
 Cognitive systems will reasoning about the transition function, as well as the effect of ◊${\theta} on the transition function. This implies a DAG model of interaction which includes reflective reasoning on the transition ◊${P(E_{next} | E_{prev}, \theta_{prev})}.
 
 ◊dot{
-E_prev->E_next;
-E_prev->O
+ep[image="◊inline-math->ref{E_{prev}}", label=""]
+en[image="◊inline-math->ref{E_{next}}", label=""]
+ep->en;
+ep->O
 O->S
 S->S
-S->E_next;
+S->en;
 }
 
 where ◊${O\sim P(O | E_{prev})} represents a noisy observation of the state of the environment.

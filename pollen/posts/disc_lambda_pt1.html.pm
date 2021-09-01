@@ -54,18 +54,10 @@ Why do we need ◊${\alpha}-conversion at all? To avoid ambiguity, if I want to 
 
 There's actually one more form of ambiguity which we need to handle with a rule - this form of ambiguity arises when considering the evaluation order of subterms in an application term.
 
-◊(define (eq-png)
-    ◊latex->ref{
-        ◊(document-class "preview")
-        ◊(use-package "amsmath")
-        ◊env["document"]{
-            $x+10=\mu$
-        }
-    })
 
 ◊dot{
-v1[image="◊(eq-png)",label=""];
-v2[image="◊(eq-png)",label=""];
+v1[image="◊inline-math->ref{\lambda}",label=""];
+v2[image="◊inline-math->ref{\lambda}",label=""];
 v1->v2;
 }
 

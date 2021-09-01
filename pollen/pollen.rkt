@@ -18,8 +18,8 @@
   txexpr
   hyphenate)
 
+(require "src/cmd.rkt")
 (require "src/mathjax.rkt")
-(require "src/popnote.rkt")
 (require "src/dot.rkt")
 (require "src/latex.rkt")
 
@@ -28,8 +28,9 @@ The pollen/pygments module provides a `highlight` tag function that performs syn
 |#
 
 (provide (all-defined-out) 
-         popup
+         cmd
          highlight
+         dot->ref
          dot
          $
          $$
@@ -37,12 +38,14 @@ The pollen/pygments module provides a `highlight` tag function that performs syn
          document-class
          use-package
          env
+         inline-math->ref
          latex->ref
          latex)
 
 #|
 `show-source` converts a source file to a displayable page.
 |#
+
 (define (show-source lang path)
   `(@ ,(title path) ,(highlight lang (file->string path))))
 
@@ -53,6 +56,7 @@ The pollen/pygments module provides a `highlight` tag function that performs syn
 #|
 `root` is the main decoder for our Pollen markup.
 |#
+
 (define exclusion-mark-attr '(decode "exclude"))
 (define (root . items)
   (decode `(decoded-root ,@items)
@@ -110,7 +114,6 @@ This “pollen.rkt” file makes variables available to the other files in the p
 (define (subhead . xs)
   `(,subhead-tag ((class ,subhead-class)) ,@xs))
 
-
 #|
 `folded` is a nice example of how Pollen can make implementation of HTML constructs simpler, and also keep those details out of the source.
 
@@ -118,6 +121,7 @@ This “pollen.rkt” file makes variables available to the other files in the p
 
 Moreover, because `folded` is implemented in Racket rather than HTML, we can use a neat trick: the `gensym` function will assign a unique ID to the div we show/hide, no matter how many times we use `folded` on the page. This generated ID is then used as input to a JavaScript function (because JavaScript is the only way of messing with the page after it's loaded).
 |#
+
 (define foldable-class "foldable")
 
 (define (foldable-subhead . xs)
@@ -149,6 +153,7 @@ Moreover, because `folded` is implemented in Racket rather than HTML, we can use
 #|
 `docs` creates links into Racket’s online documentation. This is fiddly because it’s specific to that system.
 |#
+
 (define docs-class "docs")
 
 (define (docs module-path export . xs-in)
@@ -165,6 +170,11 @@ Moreover, because `folded` is implemented in Racket rather than HTML, we can use
                                  (src ,src))))
 
 (define headshot (easy-img "headshot" "assets/img/mccoy8_circ.png"))
+
+#|
+quick-table produces an HTML table 
+following Markdown syntax.
+|#
 
 (define (quick-table . tx-elements)
   (define rows-of-text-cells

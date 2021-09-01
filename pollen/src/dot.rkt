@@ -1,6 +1,8 @@
 #lang racket
 
-(provide dot)
+(provide 
+  dot->ref
+  dot)
 
 #|
 GraphViz
@@ -13,9 +15,9 @@ GraphViz
 ;; Requires `dot` available on $PATH.
 ;;
 
-(define (dot #:dir [dir "images"] 
-             #:css-class [css-class "dot"]
-             . digraph)
+(define (dot->ref #:dir [dir "images"] 
+                  #:css-class [css-class "dot"]
+                  . digraph)
   (make-directory* dir)
   (define g (string-append "digraph G {\n"
                            "rankdir=LR;\n"
@@ -25,9 +27,18 @@ GraphViz
   (define img-path (build-path dir (~a "dot_" (equal-hash-code g) ".png")))
   (with-output-to-file path (lambda() (printf g))
                        #:exists 'replace)
-  (define cmd (string-append "dot -Tpng -Gdpi=300 "
-                             (path->string path)
-                             " > "
-                             (path->string img-path)))
-  (process cmd)
-  `(img ((class ,css-class) (src ,(path->string img-path)))))
+  (define dot-cmd (string-append "dot -Tpng -Gdpi=300 "
+                                 (path->string path)
+                                 " > "
+                                 (path->string img-path)))
+  (system dot-cmd)
+  (path->string img-path))
+
+(define (dot #:dir [dir "images"] 
+             #:css-class [css-class "dot"]
+             . digraph)
+  (define img-path 
+    (apply dot->ref #:dir dir
+           #:css-class css-class
+           digraph))
+  `(img ((class ,css-class) (src ,img-path))))
