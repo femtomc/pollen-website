@@ -40,7 +40,7 @@ body {
 
 #posts-content {
     padding: 0.5em 1.2em 0.5em 1.2em;
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 
 #intro img.headshot {
