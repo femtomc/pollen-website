@@ -8,13 +8,13 @@ I'm hoping to attend a course on development psychology this term - and for the 
 
 ◊head{Inspiration from physics}
 
-I have an opinion that cognitive science has borrowed much inspiration from physics which I wanted to explore. In the context of physics, representation and dynamics is mostly everything (seriously). Because physics has so successfully described the natural phenomenon that we experience, it seems plausible that applying the same techniques to the study of cognition might lead to similar success.
+I have an opinion that cognitive science has borrowed much inspiration from physics which I wanted to explore. In the context of physics, representation and dynamics (e.g. time evolution under a Hamiltonian) is mostly everything (seriously). Because physics has successfully described the natural phenomenon that we experience, it seems plausible that applying the same techniques to the study of cognition might lead to similar success. In particular, we might borrow the same vernacular: considering ◊em{states} and ◊em{transformations} on states.
 
 I will not argue about the content of representations in physics, suffice it to say that different base representations can lead to drastically different theories (think: N-dimensional Euclidean space, Hilbert space, even differentiable manifolds which are locally Minkowski).
 
 Instead, I'd like to focus in on the usage of ◊em{computation} in ◊em{mental computation} - which invokes a stronger relationship with the dynamics described by information theory, and (in the context of physics), something like the study of natural computation or quantum computation.
 
-One abstract viewpoint on these two terms can be obtained by reverting to descriptions which utilize ◊em{state} and ◊em{transformations} on state. This is very simple, abstract, and encompasses both physical systems with differentiable dynamics as well as the symbolic systems most often encountered in computer science.
+One abstract viewpoint on these two terms can be obtained by reverting to descriptions which utilize state and transformations. This is very simple, abstract, and encompasses both physical systems with differentiable dynamics as well as the symbolic systems most often encountered in computer science.
 
 ◊head{A study of state and transformation?}
 
