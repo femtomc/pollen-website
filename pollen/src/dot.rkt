@@ -17,7 +17,8 @@ GraphViz
              #:css-class [css-class "dot"]
              . digraph)
   (make-directory* dir)
-  (define g (string-append "digraph G {\n" 
+  (define g (string-append "digraph G {\n"
+                           "rankdir=LR;\n"
                            (apply string-append digraph)
                            "\n}"))
   (define path (build-path dir (~a "dot_" (equal-hash-code g) ".dot")))

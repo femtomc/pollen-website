@@ -70,9 +70,9 @@ img.latex {
 ◊; This is for GraphViz-generated graphs.
 img.dot {
     margin-top:1rem;
-    margin-left:6rem;
+    margin-left:4rem;
     margin-bottom:1rem;
-    max-width:50%;
+    max-width:70%;
 }
 
 ◊; don't want to use a #doc > * selector to apply default block metrics, because it will override block-level settings (because it is more “specific” in the CSS sense)
