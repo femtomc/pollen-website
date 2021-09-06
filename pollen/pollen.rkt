@@ -30,6 +30,7 @@ The pollen/pygments module provides a `highlight` tag function that performs syn
 (provide (all-defined-out) 
          cmd
          highlight
+         quoted
          dot->ref
          dot
          $
@@ -126,6 +127,13 @@ Moreover, because `folded` is implemented in Racket rather than HTML, we can use
 
 (define (foldable-subhead . xs)
   `(,subhead-tag ((class ,(string-join (list subhead-class foldable-class)))) ,@xs))
+
+(define quoted-tag 'div)
+(define quoted-class "quoted")
+
+(define (quoted . xs) 
+  (define div-name (symbol->string (gensym)))
+  `(,quoted-tag ((id ,div-name) (class ,quoted-class)) (em ,@(detect-paragraphs xs #:force? #t))))
 
 (define payload-tag 'div)
 (define payload-class "payload")

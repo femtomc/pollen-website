@@ -181,6 +181,21 @@ a.footnote:hover span {
   content: " ⇕";
 }
 
+div.quoted {
+    margin-top:2rem;
+    margin-left:11rem;
+    width: 24rem;
+    margin-bottom:2rem;
+}
+
+.◊|quoted-class| p {
+  ◊; because div.payload sets the margins
+  margin-left:0;
+  width: inherit;
+  margin-right: 0;  
+}
+
+
 div.payload {
     margin-left:11rem;
     width: 24rem;
@@ -193,6 +208,7 @@ div.payload {
   width: inherit;
   margin-right: 0;  
 }
+
 
 em, .◊|deflink-class| {
   font-style: italic;
