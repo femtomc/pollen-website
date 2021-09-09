@@ -1,5 +1,7 @@
 cd pollen
 raco pollen reset
+rm css/*.css
+rm posts/*.html
 rm -rf posts/images
 rm -rf posts/latex
 raco pollen render -r .

@@ -23,6 +23,10 @@
   color: inherit;
 }
 
+strong {
+    font-family: concourse_4;
+}
+
 ◊(define hover-color "#fbf3f3")
 ◊(define link-hover-transition ◊make-css-transition["background" "0.2s"])
 
@@ -57,6 +61,15 @@ body {
     font-family: concourse_3;
     color: #222;
     line-height: 1.4;
+}
+
+ol {
+    margin-left:11rem;
+    max-width: 70%;
+}
+
+li::marker {
+    font-family: concourse_index;
 }
 
 ◊; This is for LaTeX-generated images.
@@ -95,7 +108,7 @@ img.dot {
     ◊|default-horiz-block-metrics|
     font-family: heliotrope_8_caps;
     ◊(make-css-ot-features '("ss04"))
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 1.1;
     width: 24rem;
     margin-top: 0.25rem;
@@ -125,30 +138,8 @@ a.◊|extlink-class|:after {
     color: #933;
 }
 
-a.footnote {
-   text-decoration:none;
-   padding-left: 2px;
-   padding-right: 2px;
-   margin-right: 2px;
-} 
-
-a.footnote span {
-   left: 15px; 
-   bottom: 20px;
-   margin-left: 0px;
-   margin-right: 18px;
-   padding:14px 20px;
-   border-radius:4px; box-shadow: 5px 5px 8px #CCC;
-   border:1px solid #DCA;
-}
-
-a.footnote:hover span {
-   z-index: 9;
-   opacity: 1;
-}
-
 ◊|code-tag|.◊|code-class|, .◊|docs-class| {
-  font-family: triplicate_ot_a, Consolas, Courier;
+  font-family: julia_mono;
   font-size: 0.85rem;
   background: #fafafa;
   padding: 0.1rem;
@@ -181,21 +172,6 @@ a.footnote:hover span {
   content: " ⇕";
 }
 
-div.quoted {
-    margin-top:2rem;
-    margin-left:11rem;
-    width: 24rem;
-    margin-bottom:2rem;
-}
-
-.◊|quoted-class| p {
-  ◊; because div.payload sets the margins
-  margin-left:0;
-  width: inherit;
-  margin-right: 0;  
-}
-
-
 div.payload {
     margin-left:11rem;
     width: 24rem;
@@ -208,7 +184,6 @@ div.payload {
   width: inherit;
   margin-right: 0;  
 }
-
 
 em, .◊|deflink-class| {
   font-style: italic;
@@ -252,6 +227,10 @@ em, .◊|deflink-class| {
 
 ◊|title-tag|+div.highlight pre {
   font-size: 67%;
+}
+
+mathjax {
+    font-size: 0.85rem;
 }
 
 ◊; syntax colors adapted from Racket documentation

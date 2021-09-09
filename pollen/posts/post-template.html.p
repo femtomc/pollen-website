@@ -20,6 +20,8 @@
           media="all" href="../css/posts.css"/>
     <link rel="stylesheet" type="text/css" 
           media="all" href="../css/fonts.css"/>
+    <link rel="stylesheet" type="text/css" 
+          media="all" href="../css/latex.css"/>
 </head>
     <body>
     ◊(->html #:tag 'div #:attrs '((id "doc")) doc)
