@@ -30,11 +30,11 @@ The pollen/pygments module provides a `highlight` tag function that performs syn
 (provide (all-defined-out) 
          cmd
          highlight
-         quoted
          dot->ref
          dot
          $
          $$
+         boxed
          align
          document-class
          use-package
@@ -115,6 +115,14 @@ This “pollen.rkt” file makes variables available to the other files in the p
 (define (subhead . xs)
   `(,subhead-tag ((class ,subhead-class)) ,@xs))
 
+#| Works with latex.css to create theorem-like boxes. |#
+(define (boxed #:class [class "theorem"] . xs)
+  `(div ((class ,class)) ,@xs))
+
+(define (lemma . xs) (apply boxed #:class "lemma" xs))
+(define (theorem . xs) (apply boxed #:class "theorem" xs))
+(define (definition . xs) (apply boxed #:class "definition" xs))
+
 #|
 `folded` is a nice example of how Pollen can make implementation of HTML constructs simpler, and also keep those details out of the source.
 
@@ -127,13 +135,6 @@ Moreover, because `folded` is implemented in Racket rather than HTML, we can use
 
 (define (foldable-subhead . xs)
   `(,subhead-tag ((class ,(string-join (list subhead-class foldable-class)))) ,@xs))
-
-(define quoted-tag 'div)
-(define quoted-class "quoted")
-
-(define (quoted . xs) 
-  (define div-name (symbol->string (gensym)))
-  `(,quoted-tag ((id ,div-name) (class ,quoted-class)) (em ,@(detect-paragraphs xs #:force? #t))))
 
 (define payload-tag 'div)
 (define payload-class "payload")

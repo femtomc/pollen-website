@@ -78,3 +78,4 @@ LaTeX
       "\\begin{document}\n$"
       code
       "$\\end{document}")))
+
