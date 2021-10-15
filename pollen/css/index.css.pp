@@ -1,7 +1,7 @@
 #lang pollen
 
 body {
-    font-size: 1.0em;
+    font-size: 1.2em;
     font-family: concourse_3;
     text-rendering: optimizeLegibility;
     font-feature-settings: 'kern' 1;
