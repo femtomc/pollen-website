@@ -16,7 +16,7 @@ cd femtomc.github.io
 cp -r ../site/* .
 git add .
 git commit -m "$msg"
-git push origin master
+git push origin -f master
 cd ..
 rm -rf site
 git add .

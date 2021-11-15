@@ -27,15 +27,17 @@
 
     ◊section[#:id "block"]{
         ◊div[#:class "wide-blurb"]{
-            (◊link["https://scholar.google.com/citations?user=8kaWc0EAAAAJ&hl=en"]{Google Scholar}) My research has typically followed a core set of themes:
+            (◊link["https://scholar.google.com/citations?user=8kaWc0EAAAAJ&hl=en"]{Google Scholar}) I've typically been interested in a connected set of technical themes:
 
                 ◊ol{
-                    ◊li{◊helio{Domain-specific language design}}
-                    ◊li{◊helio{Program analysis, especially abstract interpretation}}
+                    ◊li{◊helio{Domain-specific language design, analysis, and optimization}}
+                    ◊li{◊helio{Compiler design with domain-specific semantics}}
                     ◊li{◊helio{Compiler infrastructure development}}
                 }
 
-            I’ve mostly been interested in applying these themes to problems in artificial intelligence. My main focus has been probabilistic programming, but recently I’ve also begun to explore these themes in the context of automatic differentiation and programming paradigms with other unique domain semantics (like quantum computing).
+            I’m working on applying these themes to problems in artificial intelligence. My main focus has been probabilistic programming, but recently I’ve also begun to explore these themes in the context of automatic differentiation and programming paradigms with other unique domain semantics (like quantum computing).
+
+            In general, I want to know how to make intelligent systems design possible, faster, and safer.
         }
     }
 }
