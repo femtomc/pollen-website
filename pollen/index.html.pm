@@ -15,7 +15,7 @@
         }
 
         ◊div[#:class "horizontal-list"]{
-            ◊link["/notebook"]{Notes} ◊link["/cv.pdf"]{CV} ◊link["https://github.com/femtomc"]{GitHub} ◊link["mailto:mccoybecker@gmail.com"]{Email}
+        ◊link["https://github.com/femtomc"]{GitHub} ◊link["mailto:mccoybecker@gmail.com"]{Email}
         }
     }
 }
@@ -36,8 +36,6 @@
                 }
 
             I’m working on applying these themes to problems in artificial intelligence. My main focus has been probabilistic programming, but recently I’ve also begun to explore these themes in the context of automatic differentiation and programming paradigms with other unique domain semantics (like quantum computing).
-
-            In general, I want to know how to make intelligent systems design possible, faster, and safer.
         }
     }
 }
