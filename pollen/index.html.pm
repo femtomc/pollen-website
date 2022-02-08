@@ -15,7 +15,7 @@
         }
 
         ◊div[#:class "horizontal-list"]{
-        ◊link["notebook"]{Notes} ◊link["https://github.com/femtomc"]{GitHub} ◊link["mailto:mccoybecker@gmail.com"]{Email}
+        ◊link["notebook"]{Zettels} ◊link["https://github.com/femtomc"]{GitHub} ◊link["mailto:mccoybecker@gmail.com"]{Email}
         }
     }
 }
