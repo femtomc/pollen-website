@@ -15,7 +15,7 @@
         }
 
         ◊div[#:class "horizontal-list"]{
-            ◊link["/notebook"]{Notes} ◊link["/cv.pdf"]{CV} ◊link["https://github.com/femtomc"]{GitHub} ◊link["mailto:mccoybecker@gmail.com"]{Email}
+        ◊link["braindump"]{Braindump} ◊link["https://github.com/femtomc"]{GitHub} ◊link["mailto:mccoybecker@gmail.com"]{Email}
         }
     }
 }
@@ -27,17 +27,15 @@
 
     ◊section[#:id "block"]{
         ◊div[#:class "wide-blurb"]{
-            (◊link["https://scholar.google.com/citations?user=8kaWc0EAAAAJ&hl=en"]{Google Scholar}) I've typically been interested in a connected set of technical themes:
+            (◊link["https://scholar.google.com/citations?user=8kaWc0EAAAAJ&hl=en"]{Google Scholar}) I'm interested in a connected set of technical themes:
 
                 ◊ol{
                     ◊li{◊helio{Domain-specific language design, analysis, and optimization}}
-                    ◊li{◊helio{Compiler design with domain-specific semantics}}
-                    ◊li{◊helio{Compiler infrastructure development}}
+                    ◊li{◊helio{PL/SE perspectives on artificial intelligence}}
+                    ◊li{◊helio{Performance engineering in probabilistic programming}}
                 }
 
-            I’m working on applying these themes to problems in artificial intelligence. My main focus has been probabilistic programming, but recently I’ve also begun to explore these themes in the context of automatic differentiation and programming paradigms with other unique domain semantics (like quantum computing).
-
-            In general, I want to know how to make intelligent systems design possible, faster, and safer.
+            I'm working on these themes with ◊link["http://probcomp.csail.mit.edu/"]{my lab colleagues at MIT}, advised by ◊link["http://probcomp.csail.mit.edu/principal-investigator/"]{Vikash K. Mansingkha}.
         }
     }
 }

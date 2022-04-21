@@ -176,7 +176,7 @@ Moreover, because `folded` is implemented in Racket rather than HTML, we can use
 (define helio (default-tag-function 'div #:class "force-helio"))
 
 (define (easy-img cl src) `(img ((class ,cl)
-                                 (src ,src))))
+                                       (src ,src))))
 
 (define headshot (easy-img "headshot" "assets/img/mccoy8_circ.png"))
 
