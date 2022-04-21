@@ -48,6 +48,7 @@ body {
     float: left;
     border-radius: 50%;
     width: 12.1em;
+    display: none;
 }
 
 #intro .horizontal-list {
